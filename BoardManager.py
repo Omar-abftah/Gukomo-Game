@@ -33,6 +33,3 @@ class Board:
     def update(self, x, y, value):
         self.array[x][y] = f"   {value}    "
         self.display()
-
-board = Board(19)
-board.display()

@@ -1,5 +1,15 @@
-import Player
+from Player import Player
 
 class AIPlayer(Player):
-    def __init__(self, name, board, score, char):
-        super().__init__(name, board, score, char)
+    def __init__(self, name, score, char):
+        super().__init__(name, score, char)
+
+    def run(self, board):
+        pass
+
+
+    def make_move(self, board):
+        if self.run(board):
+            return True
+        else:
+            return False

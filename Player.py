@@ -1,7 +1,5 @@
-import BoardManager
-
 class Player:
-    def __init__(self, name,score, char):
+    def __init__(self, name, score, char):
         self.name = name
         self.score = score
         self.char = char
@@ -27,6 +25,5 @@ class Player:
     def increment_score(self):
         self.score += 1
 
-    def make_move(self, board):
+    def make_move(self, board, *args):
         pass
-

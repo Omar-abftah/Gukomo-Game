@@ -6,7 +6,6 @@ class HumanPlayer(Player):
         super().__init__(name, score, char)
 
     def make_move(self, board):
-        board.display()
         x,y = input("Enter the coordinates of your move separated by a space: ").split()
         x = int(x)
         y = int(y)

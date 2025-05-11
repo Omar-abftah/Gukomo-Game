@@ -17,7 +17,7 @@ class MinMaxAI(AIPlayer):
             human_player = 'W'
         else:
             human_player = 'B'
-        moves = board.generate_move(self.char if is_maximizing else human_player, max_candidates=10)
+        moves = board.generate_move(self.char if is_maximizing else human_player, max_candidates=30)
         if is_maximizing:
             best_value = -maxsize
             for (x, y) in moves:
@@ -38,7 +38,7 @@ class MinMaxAI(AIPlayer):
     def find_the_best_move(self, board):
         best_score = -maxsize
         best_move = None
-        for (x, y) in board.generate_move(self.char, max_candidates=100):
+        for (x, y) in board.generate_move(self.char, max_candidates=30):
             board.update(x, y, self.char)
             score = self.min_max_algorithm(board, 3, False)
             board.reset_move(x, y)

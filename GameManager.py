@@ -9,14 +9,15 @@ class GameManager:
         while not self.board.check_draw():
             for i in range(2):
                 player = self.players[i]
+                self.board.display()
+                print(f"{player.name}'s turn\n")
                 while not player.make_move(self.board):
                     print("Invalid move, try again.")
-                self.board.display()
                 if self.board.check_win(player.char):
                     self.winner = player
                     self.winner.increment_score()
+                    print(f"{self.winner.name} won the game, and his current score is {self.winner.score} and Here the winning board:\n")
                     self.board.display()
-                    print(f"{self.winner.name} won the game, and his current score is {self.winner.score}")
                     return
                 if self.board.check_draw():
                     break

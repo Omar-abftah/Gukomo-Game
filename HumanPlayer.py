@@ -5,14 +5,13 @@ class HumanPlayer(Player):
         super().__init__(name, score, char)
 
     def make_move(self, board, *args):
-        """Handle both console and GUI moves"""
-        if len(args) == 2:  # GUI version - coordinates provided
+        if len(args) == 2:
             x, y = args[0], args[1]
             if board.is_valid(x, y, self.char):
                 board.update(x, y, self.char)
                 return x, y
             return None
-        else:  # Console version - get input from user
+        else:
             while True:
                 try:
                     coords = input("Enter the coordinates of your move separated by a space: ").split()

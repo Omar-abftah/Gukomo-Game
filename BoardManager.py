@@ -30,13 +30,12 @@ class Board:
         print("       | " * (self.dimension))
         for i in range(self.dimension):
             print("--- ", end="")
-            for j in range(self.dimension-1):
+            for j in range(self.dimension):
                 self.print_data_of_grid(self.array[i][j], end=" ")
             print("---", end="")
             print()
         print("       | " * (self.dimension))
         print("-" * ((self.dimension * 9) - 2))
-    # validating if the desired Position is a good position or not
     def is_valid(self, x, y, value):
         if value not in ["B", "W"]:
             print("Invalid value, Please try again")

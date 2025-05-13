@@ -4,7 +4,7 @@ from tkinter import messagebox
 class GomokuGUI:
     def __init__(self, board, players):
         self.board = board
-        self.players = players  # [player1, player2]
+        self.players = players
         self.current_player_index = 0
         self.game_active = True
         self.window = tk.Tk()

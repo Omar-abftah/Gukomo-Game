@@ -61,7 +61,6 @@ class BoardEvaluator:
         return score
 
     def _detect_pattern(self, board_state, x, y, dx, dy, cell_char):
-        """Detects length and number of open ends in a given direction"""
         length = 1
         open_ends = 0
         dimension = self.dimension
@@ -79,7 +78,6 @@ class BoardEvaluator:
                     open_ends += 1
                 break
 
-        # Backward
         nx, ny = x - dx, y - dy
         while 0 <= nx < dimension and 0 <= ny < dimension:
             if get_cell(nx, ny) == cell_char:

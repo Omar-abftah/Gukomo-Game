@@ -19,17 +19,24 @@ def main():
         print("Invalid choice")
 
 def start_console_game():
-    case = input("\n1 - Human vs AI"
-                 "\n2 - AI vs AI"
-                 "\nType your choice here(1, 2): ")
+    case = input("Please choose game mode: "
+                 "\n1 - Human vs Human"
+                 "\n2 - Human vs AI"
+                 "\n3 - AI vs AI"
+                 "\nType your choice here(1, 2, 3): ")
     dim = int(input("Please enter the board dimension: "))
     player1 = None
     player2 = None
     if case == '1':
-        name = input("Please enter Player1's name: ")
-        player1 = HumanPlayer(name, 0, 'W')
-        player2 = MinMaxAI("AI2", 0, 'B', dim)
+        name1 = input("Please enter Player1's name: ")
+        name2 = input("Please enter Player2's name: ")
+        player1 = HumanPlayer(name1, 0, 'W')
+        player2 = HumanPlayer(name2, 0, 'B')
     elif case == '2':
+        name = input("Please enter Player's name: ")
+        player1 = HumanPlayer(name, 0, 'W')
+        player2 = MinMaxAI("AI1", 0, 'B', dim)
+    elif case == '3':
         player1 = MinMaxAI("AI1", 0, 'W', dim)
         player2 = AlphaBetaPruningAI("AI2", 0, 'B', dim)
     else:
